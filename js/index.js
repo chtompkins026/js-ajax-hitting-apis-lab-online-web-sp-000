@@ -7,6 +7,7 @@ function getRepositories() {
   req.addEventListener("load", showRepositories);
   req.open("GET", uri); 
   req.send() ; 
+  return false; 
 }
 
 function showRepositories(){
