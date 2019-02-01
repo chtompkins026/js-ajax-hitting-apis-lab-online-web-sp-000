@@ -6,17 +6,17 @@ function showCommits() {
 }
 
 function getCommits(el) {
-  const name = el.dataset.repo
-  const username = el.dataset.repo
-  const req = new XMLHttpRequest()
-  req.addEventListener("load", showCommits)
-  req.open("GET", 'https://api.github.com/repos/chtompkins026/' + name + '/commits')
-  req.send()
+  const name = el.dataset.repo;
+  const username = el.dataset.repo;
+  const req = new XMLHttpRequest();
+  req.addEventListener("load", showCommits);
+  req.open("GET", 'https://api.github.com/repos/' + user + '/' + name + '/commits'); 
+  req.send(); 
 }
 
 
 function showRepositories(event, data) {
-  var repos = JSON.parse(this.responseText)
+  var repos = JSON.parse(this.responseText); 
   const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
   document.getElementById("repositories").innerHTML = repoList
 }
