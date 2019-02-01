@@ -1,4 +1,5 @@
 // your code here
+
 function showRepositories(event, data) {
   var repos = JSON.parse(this.responseText)
   const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
@@ -8,7 +9,7 @@ function showRepositories(event, data) {
 function showCommits() {
   const commits = JSON.parse(this.responseText)
   const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
-  document.getElementById("commits").innerHTML = commitsList
+  document.getElementById("details").innerHTML = commitsList
 }
 
 function getCommits(el) {
