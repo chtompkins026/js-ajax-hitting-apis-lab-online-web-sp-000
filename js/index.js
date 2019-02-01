@@ -58,8 +58,7 @@ function displayCommits() {
 }
 function getBranches(el) {
   const repoName = el.dataset.repository;
-  const uri =
-    rootURL + '/repos/' + el.dataset.username + '/' + repoName + '/branches';
+  const uri = 'https://api.github.com/repos/' + el.dataset.username + '/' + repoName + '/branches';
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', displayBranches);
   xhr.open('GET', uri);
