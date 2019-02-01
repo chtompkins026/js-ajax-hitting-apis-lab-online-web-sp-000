@@ -23,7 +23,7 @@ function showRepositories(event, data) {
 
 function getRepositories() {
   const req = new XMLHttpRequest() ; 
-  const user = document.getElementById('username').value 
+  const user = document.getElementById('username').value ;
   req.addEventListener("load", showRepositories);
   req.open("GET", 'https://api.github.com/users/chtompkins026/repos') ; 
   req.send() ; 
